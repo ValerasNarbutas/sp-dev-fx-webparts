@@ -383,8 +383,6 @@ export default class ContentQueryWebPart
 
     let viewFields: string[] = this.properties.viewFields;
 
-    console.log(viewFields);
-
     // If the WebPart is not configured to render the Dynamic Data
     if (!this.properties.itemSelectorEnabled) {
       // Enable the dynamic data selector
@@ -427,7 +425,7 @@ export default class ContentQueryWebPart
     // Redraw the property pane
     this.context.propertyPane.refresh();
 
-    console.log(this.properties);
+    // console.log(this.properties);
   }
 
   /***************************************************************************

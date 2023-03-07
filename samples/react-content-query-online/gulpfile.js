@@ -62,5 +62,12 @@ let styleLintSubTask = build.subTask('stylelint', (gulp) => {
 });
 /* end sub task */
 
+var getTasks = build.rig.getTasks;
+build.rig.getTasks = function () {
+  var result = getTasks.call(build.rig);
 
+  result.set('serve', result.get('serve-deprecated'));
+
+  return result;
+};
 build.initialize(gulp);

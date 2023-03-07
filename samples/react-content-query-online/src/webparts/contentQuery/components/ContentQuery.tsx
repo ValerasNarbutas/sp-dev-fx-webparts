@@ -63,7 +63,7 @@ export default class ContentQuery extends React.Component<IContentQueryProps, IC
   /*************************************************************************************
    * Loads the external scritps sequentially (one after the other) if any
    *************************************************************************************/
-  private loadExternalScriptsSequentially(scriptUrls: string[]): Promise<{}> {
+  private loadExternalScriptsSequentially(scriptUrls: string[]): Promise<{} | void> {
     var index = 0;
     var _this_ = this;
 

@@ -441,10 +441,10 @@ export class ContentQueryService implements IContentQueryService {
    * Performs a GET request against the specified file path and returns whether it resolved or not
    * @param filePath : The path of the file that needs to be validated against a HEAD request
    *************************************************************************************************/
-  public ensureFileResolves(filePath: string): Promise<{}> {
+  public ensureFileResolves(filePath: string): Promise<{} | void> {
     //Log.verbose(this.logSource, Text.format("Checking if file exists at url '{0}'...", filePath), this.context.serviceScope);
 
-    return new Promise<boolean>((resolve, reject) => {
+    return new Promise<boolean | void>((resolve, reject) => {
       this.spHttpClient.get(filePath, SPHttpClient.configurations.v1).then((response: SPHttpClientResponse) => {
         if (response.ok) {
           resolve();
